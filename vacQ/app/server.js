@@ -1,22 +1,14 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const app = express();
-dotenv.config({path:'./config/config.env'});
+const dotenv = require('dotenv');
+dotenv.config({path: './config/config.env'});
+const PORT = process.env.PORT
 
 
 app.use('/', (req, res) => {
-    res.send("Hello")
-})
+    res.send("Hello VacQ");
+}) ;
 
-
-
-
-const PORT=process.env.PORT;
-
-const server = app.listen(PORT, console.log('Server is running in', process.env.NODE_ENV, 'mode on port', PORT));
-
-process.on(`unhandledRejection`, (err, promise)=>{
-    console.log(`Error: ${err.message}`);
-
-    server.close(()=> process.exit(1));
+app.listen(PORT, () => {
+    console.log(`Server is running on ${PORT}`);
 });

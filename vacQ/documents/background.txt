@@ -1,0 +1,13 @@
+Background
+
+The COVID-19 pandemic has been difficult to
+handle so far. The strategy of the Government
+COVID Center (GCC) is to get the vaccine to the citizens. To be fully vaccinated, a citizen will need
+2-3 shots of vaccine.
+
+The Government therefore initiates a project to
+develop a web-based application system, called
+VacQ, to allow the citizens to book vaccination
+services to their preferred hospitals. To ensure that
+as many people as possible have access to such
+services, t

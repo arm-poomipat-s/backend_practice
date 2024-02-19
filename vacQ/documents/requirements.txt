@@ -1,0 +1,39 @@
+Functional requirements
+
+1.The system shall allow a user to register by specifying the name, email, and password.
+
+2.After registration, the user becomes a registered user, and the system shall allow the user to log in to
+use the system by specifying the email and password. The system shall allow a registered user to log
+out.
+
+3.After login, the system shall allow the registered user to book up to 3 vaccine shots by specifying the
+appointment date and the preferred hospitals. The hospital list is also provided to the user.
+
+4.The system shall allow the registered user to view their vaccination bookings.
+
+5.The system shall allow the registered user to edit their vaccination bookings.
+
+6.The system shall allow the registered user to delete their vaccination bookings
+
+7.The system shall allow the admin to view any vaccination bookings.
+
+8.The system shall allow the admin to edit any vaccination bookings.
+
+9.The system shall allow the admin to delete any vaccination bookings.
+
+Non-Functional requirements
+
+
+• Reliability:
+     The system should have more than 99.95% uptime.
+• Security:
+    The system shall authenticate users using username-
+    password.
+    The system shall be able to keep user’s transactions
+    confidential.
+• Performance:
+    • The system shall response to a request in 3 seconds.
+• Usability:
+    • The system shall use the provided user interface as is.
+
+
