@@ -6,6 +6,7 @@ const connectDB = require('./config/db');
 const auth = require('./routes/auth');
 const cookieParser = require('cookie-parser');
 
+
 const hospitals =  require('./routes/hospitals');
 
 connectDB();
