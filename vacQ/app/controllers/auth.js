@@ -17,9 +17,10 @@ exports.register = async (req, res, next) => {
 
     //create token
 
-    const token = user.getSignedJwtToken();
+    // const token = user.getSignedJwtToken();
+    // res.status(200).json({ success: true, token });
+    sendTokenResponse(user, 200, res);
 
-    res.status(200).json({ success: true, token });
   } catch (err) {
     res.status(400).json({ success: false });
     console.log(err.stack);
@@ -52,7 +53,28 @@ exports.login = async (req, res, next) => {
   }
 
   //Create token
-  const token = user.getSignedJwtToken();
+//   const token = user.getSignedJwtToken();
+//   res.status(200).json({success: true, token});
+sendTokenResponse(user, 200, res);
 
-  res.status(200).json({success: true, token});
 };
+
+const sendTokenResponse= (user, statusCode, res) => {
+    const token = user.getSignedJwtToken();
+
+    const options = {
+        expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRE*24*60*60*1000),
+        httpOnly: true
+    };
+
+    if(process.env.NODE_ENV==='production') {
+        options.secure=true;
+    }
+
+    res.status(statusCode).cookie('token', token, options).json({
+        success: true,
+        token
+    })
+
+
+}

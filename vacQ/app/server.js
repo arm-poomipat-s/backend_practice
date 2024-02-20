@@ -4,12 +4,14 @@ const dotenv = require('dotenv');
 dotenv.config({path: './config/config.env'});
 const connectDB = require('./config/db');
 const auth = require('./routes/auth');
+const cookieParser = require('cookie-parser');
 
 const hospitals =  require('./routes/hospitals');
 
 connectDB();
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use('/api/v1/hospitals', hospitals);
 app.use('/api/v1/auth', auth);
