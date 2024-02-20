@@ -13,7 +13,7 @@ exports.protect = async (req, res, next) => {
   }
 
   if (!token) {
-    res
+    return res
       .status(401)
       .json({ succes: false, message: "Not authorize to access this route" });
   }
@@ -36,7 +36,8 @@ exports.protect = async (req, res, next) => {
 //Grant access to specific roles
 exports.authorize = (...role) => {
   return (req, res, next) => {
-    if (!role) {
+    
+    if (!role.includes(req.user.role)) {
       return res
         .status(403)
         .json({
