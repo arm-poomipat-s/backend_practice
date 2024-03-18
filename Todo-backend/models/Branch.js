@@ -8,12 +8,13 @@ module.exports = (sequelize, DataTypes) => {
         }
 
     }, {
-        tableName: 'branchs'
+        tableName: 'branchs',
+        timestamps: false
     });
 
     branch.associate = models => {
-        branch.belongsTo(models.Manager, {foreignkey: 'manager_id'});
-        branch.hasMany(models.Account, {foreignkey: 'branch_id'});
+        branch.belongsTo(models.Manager, {foreignKey: 'manager_id'});
+        branch.hasMany(models.Account, {foreignKey: 'branch_id'});
     }
 
     return branch;
