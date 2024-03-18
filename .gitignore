@@ -3,3 +3,5 @@ VacQ/app/node_modules
 VacQ/app/config/config.env
 
 Todo-backend/node_modules
+
+Todo-backend/config/config.json
