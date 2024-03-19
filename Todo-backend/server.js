@@ -7,11 +7,13 @@ const managerRoutes = require('./routes/Manager');
 const branchReoutes = require('./routes/Branch');
 const accountRoutes = require('./routes/Account');
 const customerRoutes = require('./routes/Manager');
+const bodyParser = require('body-parser');
 
 
 app.use(cors());
 
 app.use(express.json());
+app.use(bodyParser.json())
 app.use(express.urlencoded({extended:false}));
 app.use('/todo-list', todo);
 
